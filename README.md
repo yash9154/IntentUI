@@ -1,112 +1,148 @@
-# IntentUI 🚀
+# 🎯 IntentUI
 
-> **Your Interface, Generated from Intent**
+> **Your interface, from your intent.** An AI-powered generative UI that adapts in real-time to what you're trying to accomplish.
 
-IntentUI is an intent-driven generative interface built with [Tambo](https://tambo.co). Instead of navigating static dashboards, you describe what you want to do, and the UI generates dynamically.
+Built with [Tambo](https://tambo.co) for the Tambo Hackathon.
 
-![Tambo Hackathon](https://img.shields.io/badge/Hackathon-Tambo%20UI%20Strikes%20Back-6366f1)
-![Next.js](https://img.shields.io/badge/Next.js-15-black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)
+---
 
-## 🎯 The Concept
+## ✨ What is IntentUI?
 
-Traditional dashboards are static and one-size-fits-all. IntentUI flips this:
-
-- **Before**: Navigate to the interface
-- **After**: The interface comes to YOU
+IntentUI flips traditional UI design on its head. Instead of clicking through menus and forms, you simply **describe what you want to do** and the interface generates itself.
 
 ```
-"I want to track my job applications" 
-    → Stats cards + Kanban board + Action buttons appear
+"I want to track my job applications"
+    ↓
+💼 Dashboard with stats, kanban board, and action buttons appear instantly
 ```
 
-## ✨ Features
+**The UI IS the output of the AI** — not just text responses, but fully functional React components.
 
-- **Intent-Driven UI**: Describe what you want, get a custom interface
-- **Generative Components**: StatsCard, InfoBlock, TaskBoard, ActionPanel, QuickForm
-- **Interactable Actions**: Buttons trigger new Tambo reasoning cycles
-- **Preset Demos**: Quick-start buttons for reliable demonstrations
-- **Beautiful Dark Theme**: Glass morphism, gradients, and smooth animations
+---
+
+## 🧠 How It Uses Tambo
+
+IntentUI leverages Tambo's core capabilities:
+
+### 1. Generative Components
+The AI chooses which components to render based on user intent. We registered **8 custom components** that Tambo can dynamically compose:
+
+| Component | When AI Uses It |
+|-----------|-----------------|
+| **StatsCard** | Showing metrics (apps sent, savings, streaks) |
+| **InfoBlock** | Tips, warnings, explanations |
+| **TaskBoard** | Kanban-style tracking (jobs, habits, tasks) |
+| **ActionPanel** | Next steps and quick actions |
+| **QuickForm** | Data entry and forms |
+| **ProgressBar** | Goal tracking and completion % |
+| **Toast** | Success/error notifications |
+| **Timeline** | Milestones and chronological events |
+
+### 2. Interactable Components
+Components aren't static — **clicking buttons triggers new AI reasoning cycles**:
+- Click "Add Application" → Form appears
+- Click "View Statistics" → Charts generate
+- Submit a form → Board updates
+
+### 3. Local Tools
+Custom tools extend AI capabilities:
+- **refine-intent** — Adjusts the UI based on new context
+- **add-board-item** — Adds items to kanban boards
+- **show-notification** — Triggers toast messages
+
+---
+
+## 🎮 Demo Use Cases
+
+Try these preset intents to see the full power:
+
+| Preset | What It Generates |
+|--------|-------------------|
+| 💼 **Job Tracker** | Stats + Kanban board + Add forms |
+| 💰 **Budget Tracker** | Income/expense stats + Progress bars |
+| ✨ **Habit Tracker** | Habit board + Streak stats |
+| 📅 **Project Timeline** | Timeline component + Phase progress |
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 15 + React 19
-- **AI/UI**: Tambo React SDK
-- **Styling**: Tailwind CSS
-- **Language**: TypeScript
-- **Icons**: Lucide React
+- **Next.js 15** + **React 19** — Latest React features
+- **Tambo React SDK** — Generative UI engine
+- **TypeScript** — Full type safety
+- **Tailwind CSS** — Consistent styling
+- **Zod** — Schema validation for component props
 
-## 🚀 Quick Start
+---
 
-### 1. Install Dependencies
+## 📦 Run Locally
 
 ```bash
+# Install dependencies
 npm install
-```
 
-### 2. Get Your Tambo API Key
+# Add your Tambo API key
+cp .env.local.example .env.local
+# Edit .env.local with your key from tambo.co
 
-1. Go to [tambo.co](https://tambo.co)
-2. Create an account and generate an API key
-3. Run the init command:
-
-```bash
-npx tambo init
-```
-
-Or manually create `.env.local`:
-
-```env
-NEXT_PUBLIC_TAMBO_API_KEY=your_key_here
-```
-
-### 3. Run the App
-
-```bash
+# Start dev server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) and start describing your intent!
+Open [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🔑 Configuration
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `NEXT_PUBLIC_TAMBO_API_KEY` | Yes | Get from [tambo.co](https://tambo.co) |
+
+**Tambo Settings:**
+- AI Mode: **LLM**
+- Token Required: **OFF**
+
+---
+
+## 🏆 Why IntentUI Stands Out
+
+| Traditional UI | IntentUI |
+|----------------|----------|
+| User learns the interface | Interface learns the user |
+| Fixed navigation | Dynamic generation |
+| Click through menus | Describe your goal |
+| Static components | Evolving, context-aware UI |
+
+**Key Innovation:** The entire application UI is generated from natural language intent, showcasing what's possible when AI doesn't just return text — it returns functional interfaces.
+
+---
 
 ## 📁 Project Structure
 
 ```
 src/
-├── app/
-│   ├── globals.css      # Global styles + dark theme
-│   ├── layout.tsx       # Root layout
-│   └── page.tsx         # Main page with TamboProvider
 ├── components/
-│   ├── IntentInterface.tsx  # Main UI component
-│   └── tambo/               # Tambo-registered components
+│   ├── IntentInterface.tsx    # Main interface
+│   └── tambo/                 # 8 generative components
 │       ├── StatsCard.tsx
-│       ├── InfoBlock.tsx
 │       ├── TaskBoard.tsx
-│       ├── ActionPanel.tsx
-│       └── QuickForm.tsx
+│       ├── ProgressBar.tsx
+│       ├── Timeline.tsx
+│       └── ...
 └── lib/
-    └── tambo.ts         # Component & tool registration
+    └── tambo.ts               # Component & tool registration
 ```
 
-## 🎮 Demo Intents
+---
 
-Try these preset intents:
+## 🎥 Demo
 
-| Preset | What It Generates |
-|--------|-------------------|
-| **Job Tracker** | Stats + Kanban board + Actions |
-| **Quick Add** | Form to add new applications |
-| **Focus: Interviews** | Tips + Interview-focused view |
+- **Live Demo**: *(add link)*
+- **Video Demo**: *(add link)*
 
-## 🏆 Built for Tambo Hackathon
+---
 
-This project demonstrates:
+## 📝 License
 
-- ✅ **Generative Components** - UI rendered based on LLM decisions
-- ✅ **Interactable Components** - Buttons trigger new AI cycles
-- ✅ **Local Tools** - `refine-intent`, `add-board-item`
-- ✅ **Real-World Use Case** - Job application tracking
-
-## 📄 License
-
-MIT © 2024
+MIT

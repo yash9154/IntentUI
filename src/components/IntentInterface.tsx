@@ -86,11 +86,13 @@ export default function IntentInterface() {
                     <div className="flex-1 flex flex-col items-center justify-center px-4 py-12">
                         <div className="text-center mb-8">
                             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                                <span className="gradient-text">Describe your intent</span>
+                                <span className="gradient-text">What do you want to build?</span>
                             </h2>
-                            <p className="text-lg text-gray-400 max-w-lg mx-auto">
-                                The interface adapts to you. Tell us what you want to accomplish,
-                                and watch the UI generate in real-time.
+                            <p className="text-lg text-gray-400 max-w-lg mx-auto mb-2">
+                                Describe what you're trying to do, and I'll build the interface for you.
+                            </p>
+                            <p className="text-sm text-gray-500">
+                                Your interface is generated from intent — try refining your goal to evolve the UI.
                             </p>
                         </div>
 
