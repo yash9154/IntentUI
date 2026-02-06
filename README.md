@@ -138,7 +138,7 @@ src/
 
 ## 🎥 Demo
 
-- **Live Demo**: *(add link)*
+- **Live Demo**: https://intent-ui-xi.vercel.app/
 - **Video Demo**: *(add link)*
 
 ---
